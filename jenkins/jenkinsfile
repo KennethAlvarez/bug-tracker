@@ -5,8 +5,7 @@ pipeline {
         stage('Testing') {
             steps {
                 dir ('bugtracker-backend')
-                sh 'echo "Running backends tests"'
-                sh 'date'
+            
                 sh 'go test -v ./...'
             }
         }

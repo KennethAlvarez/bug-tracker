@@ -48,7 +48,7 @@ pipeline {
 
             post{
                 always{
-                    junit 'backtracker-frontend/test-result.xml'
+                    junit 'bugtracker-frontend/test-result.xml'
                 }
             }
             

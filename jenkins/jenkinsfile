@@ -39,7 +39,7 @@ pipeline {
                     publishHTML target: [
                         reportDir: 'bugtracker-backend/reports',
                         reportFiles: 'coverage.html',
-                        reportName: 'Back end Report'
+                        reportName: 'Backend Report'
                     ]
                 }
             }

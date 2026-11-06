@@ -131,6 +131,7 @@ pipeline {
                 dir('tests-e2e'){
                     sh '''
                     npm ci
+                    npx playwright install
                     npx playwright test
                     '''
                 }

@@ -21,8 +21,10 @@ pipeline {
                         # Create cache directories
                         mkdir -p "$GOCACHE" "$GOMODCACHE"
                         
+
+
                         # Run the tests
-                        go test -v ./...
+                        go test -v ./... 2>&2 | go-junit-report > test-results.xml
                         go test -coverprofile=coverage.out -covermode=atomic ./...
                         go tool cover -html=coverage.out -o coverage.html
 

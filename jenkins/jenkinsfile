@@ -136,6 +136,16 @@ pipeline {
                 }
 
             }
+            post{
+                always{
+                    junit 'tests-e2e/tests-results'
+                    publishHTML target: [
+                        reportDir: 'tests-e2e/playwright-report',
+                        reportFiles: 'index.html',
+                        reportName: 'Playwright Report for E2E'
+                    ]
+                }
+            }
         }
 
 

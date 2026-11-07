@@ -149,6 +149,25 @@ pipeline {
             }
         }
 
+        stage('Performance Testing'){
+
+            agent{
+                docker{
+                    image 'grafana/k6:latest'
+                }
+
+                steps{
+                    dir('tests-perf'){
+                        sh '''
+                            k6 run script.js
+
+                        '''
+                    }
+                    
+                }
+            }
+        }
+
 
     }
 }

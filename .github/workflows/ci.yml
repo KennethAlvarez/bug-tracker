@@ -39,4 +39,7 @@ jobs:
 
             - name: Execute frontend test cases
               working-directory: ./bugtracker-frontend
+              run: |
+                npm ci
+                npm test            
             

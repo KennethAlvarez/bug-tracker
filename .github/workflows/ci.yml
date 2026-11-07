@@ -19,9 +19,9 @@ jobs:
                 cache-dependency-path: bugtracker-backend/go.sum
 
             - name: Execute backend tests
-              working-directony: ./bugtracker-backend
+              working-directory: ./bugtracker-backend
               run: |
-              go test -v ./...
+                go test -v ./...
 
 
     unit-tests-frontend:
@@ -41,5 +41,13 @@ jobs:
               working-directory: ./bugtracker-frontend
               run: |
                 npm ci
-                npm test            
+                npm test    
+            - name: Frontend Reports
+              uses: dorny/test-reporter@v1
+              if: always()
+              with:
+                name: Frontend unit tests report
+                path: bugtracker-frontend/test-results.xml
+                reporter: jest-junit
+
             

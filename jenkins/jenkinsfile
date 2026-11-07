@@ -154,18 +154,20 @@ pipeline {
             agent{
                 docker{
                     image 'grafana/k6:latest'
-                }
+                    reuseNode true
 
-                steps{
-                    dir('tests-perf'){
-                        sh '''
-                            k6 run script.js
-
-                        '''
-                    }
-                    
                 }
             }
+            steps{
+                dir('tests-perf'){
+                    sh '''
+                    k6 run script.js
+
+                '''
+                }
+                                            
+            }
+            
         }
 
 

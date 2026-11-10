@@ -75,6 +75,32 @@ jobs:
           working-directory: ./tests-api
           run: |
             npx playwright test
+    
+    testing-e2e:
+      runs-on: ubuntu-latest
+
+      steps:
+        
+        - name: Checkout repository
+          uses: actions/checkout@v4
+
+        - name: Set up Node.js
+          uses: actions/setup-node@v4
+          with:  
+            node-version: "20"
+
+        - name: Install dependencies
+          run: |
+            npm ci
+
+        - name: Run tests
+          working-repository: ./tests-e2e
+          run: |
+            npx playwright test
+      
+        
+
+
 
 
 

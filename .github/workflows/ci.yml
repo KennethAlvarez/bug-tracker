@@ -74,7 +74,6 @@ jobs:
         - name: Run API tests Playwright
           working-directory: ./tests-api
           run: |
-            npm ci
             npx playwright test
 
 

@@ -59,7 +59,7 @@ jobs:
                 
     api-tests:
       needs: unit-tests-backend
-      runs-on: ubunt-latest
+      runs-on: ubuntu-latest
 
       steps:
         - name: Checkout repository

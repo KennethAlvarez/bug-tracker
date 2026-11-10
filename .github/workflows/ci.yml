@@ -98,7 +98,7 @@ jobs:
         - name: Run tests
           working-directory: ./tests-e2e
           run: |
-            npm install playwright
+            npm install
             npx playwright test
       
         

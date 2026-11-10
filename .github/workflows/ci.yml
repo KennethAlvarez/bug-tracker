@@ -94,7 +94,7 @@ jobs:
             npm ci
 
         - name: Run tests
-          working-repository: ./tests-e2e
+          working-directory: ./tests-e2e
           run: |
             npx playwright test
       

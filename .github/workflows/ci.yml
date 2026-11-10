@@ -68,6 +68,7 @@ jobs:
         - name: Launch app
           run: |
             docker compose up --build -d
+            npm ci
             npx wait-port http://localhost:8080/api/health -t 30000
         
         - name: Run API tests Playwright

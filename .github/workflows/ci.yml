@@ -68,7 +68,6 @@ jobs:
         - name: Launch app
           run: |
             docker compose up --build -d
-            npm ci
             npx wait-port http://localhost:8080/api/health -t 30000
         
         - name: Run E2E Tests
@@ -83,6 +82,7 @@ jobs:
         - name: Run API tests Playwright
           working-directory: ./tests-api
           run: |
+            npm ci
             npx playwright test
     
 
